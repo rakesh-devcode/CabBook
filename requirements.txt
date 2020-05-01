@@ -1,0 +1,6 @@
+numpy
+flask
+flask_cors
+scipy
+flask_restful
+requests

@@ -1,0 +1,20 @@
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 119-745-068
+INFO:werkzeug: * Running on http://127.0.0.1:8080/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 119-745-068
+INFO:werkzeug: * Running on http://127.0.0.1:8080/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 00:47:14] "[37mPOST /api/book HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 00:47:26] "[37mPOST /api/book HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\rakesh\\Desktop\\PT\\Learning_Notes\\Cab-ride-system\\CabBook\\main.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 119-745-068
+INFO:werkzeug: * Running on http://127.0.0.1:8080/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 119-745-068
+INFO:werkzeug: * Running on http://127.0.0.1:8080/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 00:48:59] "[37mPOST /api/book HTTP/1.1[0m" 200 -
