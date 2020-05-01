@@ -96,6 +96,7 @@ class BookingEngine:
         except Exception as e:
             print(f'Error while setting next coordinates {str(e)}')
             raise Exception
+
     def book(self, src_coord, dest_coord):
         """
         Booking the car based upon the availability
@@ -126,6 +127,7 @@ class BookingEngine:
         except Exception as e:
             print(f'Error happened while booking available car : {str(e)}')
             raise Exception
+
     def tick(self):
         """
         Moving the time by 1 unit
