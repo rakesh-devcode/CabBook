@@ -3,6 +3,7 @@
 2. activate the virtual environment by activating it.
 3. pip install -r requirements.txt
 4. run the file main.py
+
     python main.py
 
 
