@@ -24,17 +24,18 @@ def book():
             tmpObj = bookingObj
             response = tmpObj.book(src_coord, dest_coord)
             bookingObj = tmpObj
+            return jsonify(response)
         else:
-            response = {'statuscode': 400,
+            response = {'status_code': 400,
                         'message': 'Bad request'
                         }
-        return jsonify(response)
+            return jsonify(response), 400
     except Exception as e:
         print(f'Error in book api: {str(e)}')
-        response = {'statuscode': 500,
+        response = {'status_code': 500,
                     'message': 'Internal server error'
                     }
-        return jsonify(response)
+        return jsonify(response), 500
 
 @app.route("/api/tick", methods=["POST"])
 def tick():
@@ -58,6 +59,7 @@ def reset():
     bookingObj = tmpObj
     return json.dumps(bookingObj.all_cars, default=myconverter)
 
+
 def myconverter(obj):
     if isinstance(obj, np.integer):
         return int(obj)
@@ -69,6 +71,6 @@ def myconverter(obj):
         return obj.__str__()
 
 if __name__ == '__main__':
-    app.run(port=8080)
+    app.run(port=5000)
 
 

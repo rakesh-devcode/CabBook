@@ -1,36 +1,45 @@
 import unittest
 import json
+import sys
 
+sys.path.append("../..")
 from main import app
+
+# from app import *
 
 class BookingTestCase(unittest.TestCase):
 
-    # def __init__(self):
-    #     self.app = app.test_client()
-    def case1(self):
+    def setUp(self):
+        self.client = app.test_client(self)
 
-        payload = {'x': 1, 'y': 0}, {'x': 1, 'y': 1}
-        response = self.app.post('/api/book',headers={"Content-Type": "application/json"}, data=json.dumps(payload))
+    def test_case1(self):
+        payload = {"source":
+                       {'x': 1, 'y': 0},
+                   "destination":
+                       {'x': 1, 'y': 1}
+                   }
+        expected_response = {'car_id': 1, 'total_time': 2}
+        response = self.client.post('/api/book',headers={"Content-Type": "application/json"}, data=json.dumps(payload))
         self.assertTrue(200,response.status_code)
+        self.assertEqual(expected_response,json.loads(response.data))
 
-    # def test2_createLabel_email(self):
-    #     with open('input/unit_test_exec_input.json', 'r') as f:
-    #         event = json.load(f)
-    #     event['body-json']['accountNumber']='9999999999999999'
-    #     email = Email('unit-test','unit-test-dsm-token','unit-test-trackingnumber',event['body-json'])
-    #     response = email.send()
-    #     self.assertEqual(json.loads(response)['status'],'Failure')
-    #
-    # def test3_createLabel_getShippingAddress_trial(self):
-    #     address = GetShipToAddress('unit-test-dsm-token','unit-test','9999999999999999')
-    #     response = address.getaddress()
-    #     self.assertEqual(response['city'],'Swedesboro')
-    #
-    # def test4_createLabel_getShippingAddress(self):
-    #     address = GetShipToAddress('unit-test-dsm-token','unit-test','8495849999999999')
-    #     response = address.getaddress()
-    #     self.assertEqual(response['city'].strip(),'FAIRVIEW')
+    def test_case2(self):
+        payload = {"source":
+                       {'x': 1, 'y': 1},
+                   "destination":
+                       {'x': 5, 'y': 5}
+                   }
+        expected_response = {'car_id': 2, 'total_time': 10}
+        response = self.client.post('/api/book',headers={"Content-Type": "application/json"}, data=json.dumps(payload))
+        self.assertTrue(200,response.status_code)
+        self.assertEqual(expected_response,json.loads(response.data))
 
+    def test_case3(self):
+        payload = {"source":
+                       {'x': 1, 'y': 1}
+                   }
+        response = self.client.post('/api/book',headers={"Content-Type": "application/json"}, data=json.dumps(payload))
+        self.assertTrue(400,response.status_code)
 
 if __name__ == '__main__':
     unittest.main()

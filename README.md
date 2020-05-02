@@ -1,4 +1,12 @@
-# Backend Take Home Exercise
+# Steps to run the solutions:
+1. goto venv/scripts folder
+2. activate the virtual environment by activating it.
+3. pip install -r requirements.txt
+4. run the file main.py
+    python main.py
+
+
+python main.py
 
 ## Taxi booking system
 
