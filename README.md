@@ -7,12 +7,13 @@ step 3. Install all requirements.
 
     pip install -r requirements.txt
     
-step 4. run the file main.py
-
-    python main.py
-step 5. run unit tests
+step 4. run unit tests
 
     python unit_test.py
+    
+step 5. run the file main.py
+
+    python main.py
     
 step 6. Test the functionality
 
